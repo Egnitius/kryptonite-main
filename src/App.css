@@ -1,0 +1,333 @@
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  background-color: #003087; /* Superman Blue */
+  color: #D7DF23; /* Superman Gold */
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+main {
+  margin-top: 20px;
+}
+
+.header h1 {
+  color: gold;
+  /* color: red; */
+}
+
+.currency-select label {
+  color: #D7DF23; /* Superman Gold */
+}
+
+/* Search Bar */
+.search-bar input[type="text"] {
+  background-color: #F8F8F8; /* Light Gray */
+  width: 300px;
+  height: 30px;
+}
+
+.search-bar {
+  margin-bottom: 20px;
+}
+.search-bar button {
+  background-color: #003087; /* Superman Blue */
+  color: #fff;
+  height: 35px;
+  margin: 10px;
+}
+
+/* Top Five Cryptocurrencies */
+.top-five h2 {
+  color: #003087; /* Superman Blue */
+}
+
+/* Other Cryptocurrencies */
+.other-cryptos h2 {
+  color: #003087; /* Superman Blue */
+}
+
+.coin {
+  border: 2px solid #003087; /* Superman Blue */
+}
+
+.coin img {
+  border: 2px solid #d7df23; /* Superman Gold */
+  margin: 0 auto; /* Add this line */
+}
+.coin-image {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.coin-details h3 {
+  color: #003087; /* Superman Blue */
+}
+
+.coin-details p {
+  color: #333;
+}
+
+.coin-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.coin-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.coin {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Add this line */
+  justify-content: center; /* Add this line */
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid #003087; /* Superman Blue */
+  border-radius: 5px;
+  max-width: 250px;
+}
+
+.coin-details p {
+  color: #333;
+}
+
+/* Table */
+table {
+  width: 80%;
+  background: #fff;
+  margin: 1em 0;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0.28571429rem;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.87);
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 1em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table {
+  display: table;
+  border-collapse: separate;
+  box-sizing: border-box;
+  text-indent: initial;
+  border-spacing: 2px;
+}
+
+table {
+  border: 2px solid #003087; /* Superman Blue */
+}
+
+th {
+  background-color: #003087; /* Superman Blue */
+  color: #fff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: lightgrey; /* Light Gray */
+}
+
+footer {
+  background-color: #003087; /* Superman Blue */
+  color: #fff;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: transform 0.3s ease;
+}
+
+.footer-hidden {
+  transform: translateY(100%);
+}
+
+h1, h2, h3 {
+  margin: 0;
+  color: #333;
+}
+
+p {
+  margin: 5px 0;
+}
+
+/* News Section */
+.news-section {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Update this line */
+}
+
+.news-section h2 {
+  color: #003087;
+}
+
+.news-card {
+  width: calc(33.33% - 20px);
+  border: 1px solid #005fb3;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+  display: flex; /* Add this line */
+  flex-direction: column; /* Add this line */
+  align-items: center; /* Add this line */
+  text-align: center; /* Add this line */
+}
+
+.news-card h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: #005fb3;
+}
+
+.news-card p {
+  font-size: 14px;
+  color: #333;
+}
+
+.popup {
+  background-color: #F8F8F8; /* Superman Blue */
+  color: #003087; /* Superman Gold */
+  padding: 20px;
+  border: 2px solid #003087;
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.popup h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: red;
+}
+
+.popup p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.popup button {
+  background-color: #003087; /* Superman Blue */
+  color: #D7DF23; /* Superman Gold */
+  border: 2px solid #D7DF23; /* Superman Gold */
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.popup button:hover {
+  background-color: red;
+  color: black;
+}
+
+.chart-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.chart-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  width: 80%;
+  height: 80%;
+  max-width: 800px;
+  max-height: 450px;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: red;
+  cursor: pointer;
+}
+
+/* Styles for screens smaller than 600px */
+@media (max-width: 600px) {
+  .search-bar input[type="text"] {
+    width: 100%; /* Adjust the width as desired */
+  }
+
+  .coin {
+    max-width: 100%; /* Adjust the max-width as desired */
+  }
+
+  .coin-list {
+    justify-content: center; /* Center the coins vertically */
+  }
+
+  .coin-row {
+    flex-direction: column; /* Stack the coins vertically */
+  }
+
+  .coin {
+    margin: 10px auto; /* Center the coins horizontally */
+  }
+
+  /* Add more styles as needed for smaller screens */
+}
+
+/* Styles for screens between 601px and 1024px */
+@media (min-width: 601px) and (max-width: 1024px) {
+  /* Example styles */
+  header {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .coin-list {
+    flex-direction: column;
+  }
+
+  /* Add more styles as needed for this screen size range */
+}
+
+/* Styles for screens larger than 1024px */
+@media (min-width: 1025px) {
+  /* Example styles */
+  header {
+    padding: 30px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  /* Add more styles as needed for larger screens */
+}
