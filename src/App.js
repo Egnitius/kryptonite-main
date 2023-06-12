@@ -248,10 +248,12 @@ function App() {
                 />
                 <div className="coin-details">
                   <h3>{coin.CoinInfo.FullName}</h3>
-                  <p onClick={() => {
-                    setSelectedCoin(coin);
-                    fetchChartData(coin);
-                  }}>
+                  <p
+                    onClick={() => {
+                      setSelectedCoin(coin);
+                      fetchChartData(coin);
+                    }}
+                  >
                     Price: {getCurrencySymbol(selectedCurrency)}
                     {calculatePriceInSelectedCurrency(coin)}
                   </p>
