@@ -205,7 +205,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1 color="gold">Kryptonite</h1>
+        <h1 className="Head1">Kryptonite</h1>
         <div className="currency-select">
           <label htmlFor="currency">Select Currency: </label>
           <select
@@ -248,7 +248,10 @@ function App() {
                 />
                 <div className="coin-details">
                   <h3>{coin.CoinInfo.FullName}</h3>
-                  <p>
+                  <p onClick={() => {
+                    setSelectedCoin(coin);
+                    fetchChartData(coin);
+                  }}>
                     Price: {getCurrencySymbol(selectedCurrency)}
                     {calculatePriceInSelectedCurrency(coin)}
                   </p>
@@ -309,7 +312,7 @@ function App() {
                               size: 12,
                               weight: "bold",
                             },
-                            color: "Gold",
+                            color: "Black",
                           },
                         },
                       },
@@ -325,7 +328,7 @@ function App() {
           <table>
             <thead>
               <tr>
-                <th className="place text-center">#</th>
+                <th className="place text-center">ID</th>
                 <th className="thumb text-center" colSpan="2">
                   Coin
                 </th>
