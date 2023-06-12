@@ -229,6 +229,9 @@ p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  max-width: 600px; /* Set your desired maximum width */
+  max-height: 80vh; /* Set the maximum height to 80% of the viewport height */
+  overflow-y: auto; /* Enable vertical scrolling */
 }
 
 .popup h3 {
@@ -301,12 +304,11 @@ p {
   .coin {
     max-width: 100%; /* Adjust the max-width as desired */
     margin: 10px auto; /* Center the coins horizontally */
-    vertical-align: middle;
     border: 2px solid #003087;
     padding: 0px;
     display: flex;
-    /* justify-content: space-around; */
     justify-content: space-between;
+    flex-wrap: wrap; /* Allow coins to wrap within the container */
   }
 
   .coin-list {
@@ -315,6 +317,7 @@ p {
 
   .coin-row {
     flex-direction: column; /* Stack the coins vertically */
+    align-items: center; /* Center the coins horizontally within the column */
   }
 
   .coin-details p,
@@ -325,9 +328,53 @@ p {
   .news-section {
     justify-content: flex-start; /* Adjust as needed */
   }
-
+  
   .news-card {
     width: 100%; /* Adjust as needed */
+    margin-left: 0;
+  }
+
+  .news-card:nth-child(even) {
+    margin-left: 0px;
+  }
+
+  table {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .chart-modal {
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .chart-container {
+    width: 100%;
+    height: 30%;
+    max-width: none;
+    max-height: none;
+  }
+
+  .popup {
+    width: 90%;
+    max-width: 400px;
+    padding: 10px;
+    font-size: 16px;
+    overflow-y: auto;
+  }
+
+  .popup h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .popup p {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .popup button {
+    padding: 6px 12px;
   }
 
   /* Add more styles as needed for smaller screens */

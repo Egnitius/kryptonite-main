@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import NewsSection from "./News.js";
-import { Line } from "react-chartjs-2";
+import { Line, Bar } from "react-chartjs-2";
 import "chart.js/auto";
 // eslint-disable-next-line
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -21,6 +21,8 @@ function App() {
   const [selectedCurrency, setSelectedCurrency] = useState("USD");
   const [selectedCoin, setSelectedCoin] = useState(null);
   const [chartData, setChartData] = useState(null);
+  const [chartType, setChartType] = useState("line");
+  const [title, setTitle] = useState("");
 
   const handleSearch = (event) => {
     const query = event.target.value.toLowerCase();
@@ -78,7 +80,7 @@ function App() {
       const response = await axios.get(
         `https://min-api.cryptocompare.com/data/v2/histoday?fsym=${coin.CoinInfo.Name}&tsym=${selectedCurrency}&limit=30&api_key=4adeed9b3de5eb507d65f26a9d150cc909328b183d74957dc8a250952ccb8f4a`
       );
-      const data = response.data.Data.Data;
+      const data = response.data.Data.Data.slice(-14); // Limit data to last 14 entries
       const labels = data.map((item) => {
         const date = new Date(item.time * 1000);
         return date.toLocaleDateString();
@@ -97,6 +99,7 @@ function App() {
         ],
       };
       setChartData(chartData);
+      setTitle(coin.CoinInfo.FullName);
     } catch (error) {
       console.log(error);
     }
@@ -272,54 +275,176 @@ function App() {
                   className="close-button"
                   onClick={() => setSelectedCoin(null)}
                 >
-                  Close
+                  X
                 </button>
                 {chartData && (
-                  <Line
-                    data={chartData}
-                    options={{
-                      responsive: true,
-                      scales: {
-                        y: {
-                          beginAtZero: true,
-                          title: {
-                            display: true,
-                            text: "Price",
-                            font: {
-                              size: 14,
-                              weight: "bold",
+                  <>
+                    <div className="chart-type-selector">
+                      <label>
+                        <input
+                          type="radio"
+                          name="chartType"
+                          value="line"
+                          checked={chartType === "line"}
+                          onChange={() => setChartType("line")}
+                        />
+                        Line Chart
+                      </label>
+                      <label>
+                        <input
+                          type="radio"
+                          name="chartType"
+                          value="bar"
+                          checked={chartType === "bar"}
+                          onChange={() => setChartType("bar")}
+                        />
+                        Bar Chart
+                      </label>
+                    </div>
+                    <h2 style={{ textAlign: 'center' }}>{title}</h2>
+                    {chartType === "line" ? (
+                      <Line
+                        data={chartData}
+                        options={{
+                          responsive: true,
+                          scales: {
+                            y: {
+                              beginAtZero: true,
+                              title: {
+                                display: true,
+                                text:
+                                  "Price " +
+                                  getCurrencySymbol(selectedCurrency),
+                                font: {
+                                  size: 14,
+                                  weight: "bold",
+                                },
+                                color: "blue",
+                              },
+                              ticks: {
+                                font: {
+                                  size: 12,
+                                  weight: "bold",
+                                },
+                                color: "black",
+                              },
                             },
-                            color: "red",
-                          },
-                          ticks: {
-                            font: {
-                              size: 12,
-                              weight: "bold",
+                            x: {
+                              title: {
+                                display: true,
+                                text: "Date",
+                                font: {
+                                  size: 14,
+                                  weight: "bold",
+                                },
+                                color: "blue",
+                              },
+                              ticks: {
+                                font: {
+                                  size: 12,
+                                  weight: "bold",
+                                },
+                                color: "Black",
+                              },
                             },
-                            color: "blue",
                           },
-                        },
-                        x: {
-                          title: {
-                            display: true,
-                            text: "Date",
-                            font: {
-                              size: 14,
-                              weight: "bold",
+                          plugins: {
+                            legend: {
+                              display: false, // Hide the legend
                             },
-                            color: "blue",
                           },
-                          ticks: {
-                            font: {
-                              size: 12,
-                              weight: "bold",
+                          elements: {
+                            point: {
+                              backgroundColor: "rgba(255, 255, 0, 1)", // Set the point color to yellow
+                              borderColor: "rgba(255, 0, 0, 1)", // Set the point border color to red
+                              borderWidth: 1, // Set the point border width
+                              radius: 4, // Set the point radius
+                              hoverRadius: 6, // Set the point hover radius
                             },
-                            color: "Black",
+                            line: {
+                              borderColor: "rgba(50, 50, 255, 1)", // Set the line color to blue
+                              borderWidth: 2, // Set the line width
+                            },
                           },
-                        },
-                      },
-                    }}
-                  />
+                          layout: {
+                            padding: {
+                              left: 10,
+                              right: 10,
+                              top: 10,
+                              bottom: 30,
+                            },
+                          },
+                          maintainAspectRatio: false, // Allow the chart to resize based on its container
+                        }}
+                      />
+                    ) : (
+                      <Bar
+                        data={chartData}
+                        options={{
+                          responsive: true,
+                          scales: {
+                            y: {
+                              beginAtZero: true,
+                              title: {
+                                display: true,
+                                text: "Price " +
+                                getCurrencySymbol(selectedCurrency),
+                                font: {
+                                  size: 14,
+                                  weight: "bold",
+                                },
+                                color: "blue",
+                              },
+                              ticks: {
+                                font: {
+                                  size: 12,
+                                  weight: "bold",
+                                },
+                                color: "black",
+                              },
+                            },
+                            x: {
+                              title: {
+                                display: true,
+                                text: "Date",
+                                font: {
+                                  size: 14,
+                                  weight: "bold",
+                                },
+                                color: "blue",
+                              },
+                              ticks: {
+                                font: {
+                                  size: 12,
+                                  weight: "bold",
+                                },
+                                color: "Black",
+                              },
+                            },
+                          },
+                          plugins: {
+                            legend: {
+                              display: false, // Hide the legend
+                            },
+                          },
+                          layout: {
+                            padding: {
+                              left: 10,
+                              right: 10,
+                              top: 10,
+                              bottom: 30,
+                            },
+                          },
+                          maintainAspectRatio: false, // Allow the chart to resize based on its container
+                          barThickness: 20, // Set the width of the bars
+                          backgroundColor: "rgba(50, 50, 255, 0.7)", // Set the background color of the bars
+                          borderColor: "rgba(50, 50, 255, 1)", // Set the border color of the bars
+                          borderWidth: 1, // Set the border width of the bars
+                          borderRadius: 5, // Set the border radius of the bars
+                        }}
+                      />
+                    )}
+                  </>
                 )}
               </div>
             </div>
@@ -390,18 +515,15 @@ function App() {
                     {calculatePriceInSelectedCurrency(coin)}
                   </td>
                   <td className="volume">
-                    {getCurrencySymbol(selectedCurrency).VOLUME24HOURTO}
+                    {getCurrencySymbol(selectedCurrency)}
                     {calculateDirectVolInSelectedCurrency(coin)}
                   </td>
                   <td className="full-volume">
-                    {getCurrencySymbol(selectedCurrency).TOTALVOLUME24HTO}
+                    {getCurrencySymbol(selectedCurrency)}
                     {calculateTotalVolInSelectedCurrency(coin)}
                   </td>
                   <td className="full-volume">
-                    {
-                      getCurrencySymbol(selectedCurrency)
-                        .TOTALTOPTIERVOLUME24HTO
-                    }
+                    {getCurrencySymbol(selectedCurrency)}
                     {calculateTopTierVolInSelectedCurrency(coin)}
                   </td>
                   <td className="market-cap">
@@ -409,7 +531,6 @@ function App() {
                     {calculateMarketCapInSelectedCurrency(coin)}
                   </td>
                   <td className="change">
-                    {getCurrencySymbol(selectedCurrency).CHANGEDAY}
                     {calculateChangeInSelectedCurrency(coin)}
                   </td>
                 </tr>
