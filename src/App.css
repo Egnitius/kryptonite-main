@@ -6,7 +6,7 @@
 /* Header */
 header {
   background-color: #003087; /* Superman Blue */
-  color: #D7DF23; /* Superman Gold */
+  color: #d7df23; /* Superman Gold */
   padding: 20px;
   position: fixed;
   width: 100%;
@@ -37,10 +37,9 @@ select option {
 
 /* Search Bar */
 .search-bar input[type="text"] {
-  background-color: #F8F8F8; /* Light Gray */
+  background-color: #f8f8f8; /* Light Gray */
   width: 300px;
   height: 30px;
-
 }
 
 .search-bar {
@@ -168,7 +167,9 @@ footer {
   transform: translateY(100%);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin: 0;
   color: #333;
 }
@@ -219,7 +220,7 @@ p {
 }
 
 .popup {
-  background-color: #F8F8F8; /* Superman Blue */
+  background-color: #f8f8f8; /* Superman Blue */
   color: #003087; /* Superman Gold */
   padding: 20px;
   border: 2px solid #003087;
@@ -243,8 +244,8 @@ p {
 
 .popup button {
   background-color: #003087; /* Superman Blue */
-  color: #D7DF23; /* Superman Gold */
-  border: 2px solid #D7DF23; /* Superman Gold */
+  color: #d7df23; /* Superman Gold */
+  border: 2px solid #d7df23; /* Superman Gold */
   padding: 8px 16px;
   border-radius: 5px;
   font-weight: bold;
@@ -297,12 +298,11 @@ p {
     width: 100%; /* Adjust the width as desired */
   }
 
-
   .coin {
     max-width: 100%; /* Adjust the max-width as desired */
     margin: 10px auto; /* Center the coins horizontally */
     vertical-align: middle;
-    border:2px solid #003087;
+    border: 2px solid #003087;
     padding: 0px;
     display: flex;
     /* justify-content: space-around; */
@@ -317,10 +317,10 @@ p {
     flex-direction: column; /* Stack the coins vertically */
   }
 
-  .coin-details p, 
+  .coin-details p,
   .coin-details h3 {
     font-size: smaller;
-}
+  }
 
   .news-section {
     justify-content: flex-start; /* Adjust as needed */
