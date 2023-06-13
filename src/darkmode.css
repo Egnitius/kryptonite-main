@@ -67,6 +67,10 @@ body.dark-mode {
   background-color: #222;
 }
 
+.App.dark-mode .news-section h2 {
+  color: #d7df23;
+}
+
 .App.dark-mode .news-card {
   border: 1px solid #d7df23;
   background-color: #333;

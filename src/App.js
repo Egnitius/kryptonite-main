@@ -339,17 +339,17 @@ function App() {
                                   "Price " +
                                   getCurrencySymbol(selectedCurrency),
                                 font: {
-                                  size: 14,
+                                  size: 16,
                                   weight: "bold",
                                 },
-                                color: "blue",
+                                color: darkMode ? "white" : "red",
                               },
                               ticks: {
                                 font: {
                                   size: 12,
                                   weight: "bold",
                                 },
-                                color: "black",
+                                color: darkMode ? "white" : "black",
                               },
                             },
                             x: {
@@ -357,17 +357,17 @@ function App() {
                                 display: true,
                                 text: "Date",
                                 font: {
-                                  size: 14,
+                                  size: 16,
                                   weight: "bold",
                                 },
-                                color: "blue",
+                                color: darkMode ? "white" : "red",
                               },
                               ticks: {
                                 font: {
                                   size: 12,
                                   weight: "bold",
                                 },
-                                color: "Black",
+                                color: darkMode ? "white" : "black",
                               },
                             },
                           },
@@ -414,17 +414,17 @@ function App() {
                                   "Price " +
                                   getCurrencySymbol(selectedCurrency),
                                 font: {
-                                  size: 14,
+                                  size: 16,
                                   weight: "bold",
                                 },
-                                color: "blue",
+                                color: darkMode ? "white" : "red",
                               },
                               ticks: {
                                 font: {
                                   size: 12,
                                   weight: "bold",
                                 },
-                                color: "black",
+                                color: darkMode ? "white" : "black",
                               },
                             },
                             x: {
@@ -432,17 +432,17 @@ function App() {
                                 display: true,
                                 text: "Date",
                                 font: {
-                                  size: 14,
+                                  size: 16,
                                   weight: "bold",
                                 },
-                                color: "blue",
+                                color: darkMode ? "white" : "red",
                               },
                               ticks: {
                                 font: {
                                   size: 12,
                                   weight: "bold",
                                 },
-                                color: "Black",
+                                color: darkMode ? "white" : "black",
                               },
                             },
                           },
