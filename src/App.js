@@ -208,7 +208,11 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1 className="Head1">Kryptonite</h1>
+        <h1 className="Head1">
+          {" "}
+          <img src="./logo3.jpeg" alt="Kryptonite Logo" />
+          <span>ryptonite</span>
+        </h1>
         <div className="currency-select">
           <label htmlFor="currency">Select Currency: </label>
           <select
@@ -301,7 +305,7 @@ function App() {
                         Bar Chart
                       </label>
                     </div>
-                    <h2 style={{ textAlign: 'center' }}>{title}</h2>
+                    <h2 style={{ textAlign: "center" }}>{title}</h2>
                     {chartType === "line" ? (
                       <Line
                         data={chartData}
@@ -387,8 +391,9 @@ function App() {
                               beginAtZero: true,
                               title: {
                                 display: true,
-                                text: "Price " +
-                                getCurrencySymbol(selectedCurrency),
+                                text:
+                                  "Price " +
+                                  getCurrencySymbol(selectedCurrency),
                                 font: {
                                   size: 14,
                                   weight: "bold",
