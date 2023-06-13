@@ -1,0 +1,143 @@
+body.dark-mode {
+  background-color: #181818;
+  color: #fff;
+}
+
+/* Header */
+.App.dark-mode header {
+  background-color: #000;
+  color: #d7df23;
+}
+
+.App.dark-mode .Head1 span {
+  color: #d7df23;
+}
+
+/* Top Five Cryptocurrencies */
+.App.dark-mode .top-five h2 {
+  color: #d7df23;
+}
+
+/* Other Cryptocurrencies */
+.App.dark-mode .other-cryptos h2 {
+  color: #d7df23;
+}
+
+.App.dark-mode .coin {
+  border: 2px solid #d7df23;
+}
+
+.App.dark-mode .coin img {
+  border: 2px solid #d7df23;
+}
+
+.App.dark-mode .coin-details h3 {
+  color: #d7df23;
+}
+
+.App.dark-mode .coin-details p {
+  color: #d7df23;
+  font-weight: bold;
+}
+
+/* Table */
+.App.dark-mode table {
+  background-color: #333;
+  color: #fff;
+  border: 2px solid #d7df23;
+}
+
+.App.dark-mode th {
+  background-color: #d7df23;
+  color: #000;
+}
+
+.App.dark-mode tbody tr:nth-child(even) {
+  background-color: #222;
+}
+
+/* Footer */
+.App.dark-mode footer {
+  background-color: #000;
+  color: #d7df23;
+}
+
+/* News Section */
+.App.dark-mode .news-section {
+  background-color: #222;
+}
+
+.App.dark-mode .news-card {
+  border: 1px solid #d7df23;
+  background-color: #333;
+}
+
+.App.dark-mode .news-card h3 {
+  color: #d7df23;
+}
+
+.App.dark-mode .news-card p {
+  color: #fff;
+}
+
+.App.dark-mode .popup {
+  background-color: #222;
+  color: #d7df23;
+  border: 2px solid #d7df23;
+}
+
+.App.dark-mode .popup h3 {
+  color: red;
+}
+
+.App.dark-mode .popup p {
+  color: #fff;
+}
+
+.App.dark-mode .popup button {
+  background-color: #d7df23;
+  color: #000;
+  border: 2px solid #d7df23;
+}
+
+.App.dark-mode .chart-modal {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.App.dark-mode .chart-container {
+  background: #333;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.App.dark-mode .close-button {
+  color: #d7df23;
+}
+
+.light-mode-button {
+  background-color: #000; /* Dark background color */
+  color: #d7df23; /* Superman Gold */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode-button {
+  background-color: #d7df23; /* Superman Gold */
+  color: #000; /* Black text color */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-right: auto; /* Add this property to push the button to the left side */
+}
+
+
+/* Add more dark mode styles as needed */

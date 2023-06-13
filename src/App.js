@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
+import "./darkmode.css";
 import axios from "axios"; // Import axios library
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -9,8 +10,8 @@ import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import NewsSection from "./News.js";
 import { Line, Bar } from "react-chartjs-2";
 import "chart.js/auto";
-// eslint-disable-next-line
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAdjust } from "@fortawesome/free-solid-svg-icons";
 
 library.add(faInfoCircle);
 
@@ -23,6 +24,7 @@ function App() {
   const [chartData, setChartData] = useState(null);
   const [chartType, setChartType] = useState("line");
   const [title, setTitle] = useState("");
+  const [darkMode, setDarkMode] = useState(false);
 
   const handleSearch = (event) => {
     const query = event.target.value.toLowerCase();
@@ -104,6 +106,20 @@ function App() {
       console.log(error);
     }
   };
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add("dark-mode");
+      document.querySelector(".App").classList.add("dark-mode");
+    } else {
+      document.body.classList.remove("dark-mode");
+      document.querySelector(".App").classList.remove("dark-mode");
+    }
+  }, [darkMode]);
 
   const calculatePriceInSelectedCurrency = (coin) => {
     const price =
@@ -209,8 +225,11 @@ function App() {
     <div className="App">
       <header>
         <h1 className="Head1">
-          {" "}
-          <img src="./logo3.jpeg" alt="Kryptonite Logo" />
+          {darkMode ? (
+            <img src="./logo3-dark.jpeg" alt="Superman Logo" />
+          ) : (
+            <img src="./logo3.jpeg" alt="Kryptonite Logo" />
+          )}
           <span>ryptonite</span>
         </h1>
         <div className="currency-select">
@@ -549,6 +568,13 @@ function App() {
         <br></br>
       </main>
       <footer>
+        <button
+          className={darkMode ? "dark-mode-button" : "light-mode-button"}
+          onClick={toggleDarkMode}
+        >
+          <FontAwesomeIcon icon={faAdjust} className="icon" />
+          {darkMode ? "" : ""}
+        </button>
         <p>&copy; 2023 Kryptonite. All rights reserved.</p>
       </footer>
     </div>
