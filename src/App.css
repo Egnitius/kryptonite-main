@@ -26,13 +26,13 @@ header {
 
 .Head1 img {
   width: 100px;
-  transform: translate( -20%, -20%);
+  transform: translate(-20%, -20%);
 }
 
 .Head1 span {
   color: gold;
   font-size: 24px;
-  transform: translate( -35%, -60%);
+  transform: translate(-35%, -60%);
 }
 
 main {
@@ -311,40 +311,40 @@ p {
 
 /* Styles for screens smaller than 600px */
 @media (max-width: 600px) {
+  .Head1 img {
+    width: 50px;
+    transform: translate(-30%, -20%);
+  }
+
+  .Head1 span {
+    font-size: 18px;
+    transform: translate(-35%, -40%);
+  }
+
   .search-bar input[type="text"] {
-    width: 100%; /* Adjust the width as desired */
+    width: 100%;
   }
 
   .coin {
-    max-width: 100%; /* Adjust the max-width as desired */
-    margin: 10px auto; /* Center the coins horizontally */
-    border: 2px solid #003087;
+    max-width: 100%;
+    margin: 10px auto;
     padding: 0px;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap; /* Allow coins to wrap within the container */
-  }
-
-  .coin-list {
-    justify-content: center; /* Center the coins vertically */
-  }
-
-  .coin-row {
-    flex-direction: column; /* Stack the coins vertically */
-    align-items: center; /* Center the coins horizontally within the column */
+    flex-wrap: wrap;
   }
 
   .coin-details p,
   .coin-details h3 {
-    font-size: smaller;
+    font-size: 12px;
   }
 
   .news-section {
-    justify-content: flex-start; /* Adjust as needed */
+    justify-content: flex-start;
   }
-  
+
   .news-card {
-    width: 100%; /* Adjust as needed */
+    width: 100%;
     margin-left: 0;
   }
 
@@ -396,13 +396,12 @@ p {
 
 /* Styles for screens between 601px and 1024px */
 @media (min-width: 601px) and (max-width: 1024px) {
-  /* Example styles */
   header {
-    padding: 10px;
+    padding: 15px;
   }
 
   h1 {
-    font-size: 24px;
+    font-size: 28px;
   }
 
   .coin-list {
@@ -414,13 +413,12 @@ p {
 
 /* Styles for screens larger than 1024px */
 @media (min-width: 1025px) {
-  /* Example styles */
   header {
-    padding: 30px;
+    padding: 40px;
   }
 
   h1 {
-    font-size: 36px;
+    font-size: 42px;
   }
 
   /* Add more styles as needed for larger screens */
