@@ -11,7 +11,7 @@ import NewsSection from "./News.js";
 import { Line, Bar } from "react-chartjs-2";
 import "chart.js/auto";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAdjust } from "@fortawesome/free-solid-svg-icons";
+import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 
 library.add(faInfoCircle);
 
@@ -572,7 +572,11 @@ function App() {
           className={darkMode ? "dark-mode-button" : "light-mode-button"}
           onClick={toggleDarkMode}
         >
-          <FontAwesomeIcon icon={faAdjust} className="icon" />
+          {darkMode ? (
+            <FontAwesomeIcon icon={faSun} className="icon" />
+          ) : (
+            <FontAwesomeIcon icon={faMoon} className="icon" />
+          )}
           {darkMode ? "" : ""}
         </button>
         <p>&copy; 2023 Kryptonite. All rights reserved.</p>
