@@ -435,6 +435,7 @@ p {
 
   .currency-select {
     margin-top: 200px; /* Add margin-top to create space below Head1 */
+    margin-left: 20%;
   }
 
   /* Rest of the styles... */
