@@ -470,7 +470,7 @@ p {
 
   .popup {
     width: 90%;
-    max-width: 300px;
+    max-width: 200px;
     padding: 5px;
     font-size: 14px;
     overflow-y: auto;
