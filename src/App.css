@@ -1,6 +1,8 @@
 .App {
   text-align: center;
   padding: 20px;
+  overflow: hidden;
+  margin: 0;
 }
 
 /* Header */
@@ -15,13 +17,15 @@ header {
   left: 0;
   right: 0;
   z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .Head1 {
-  position: absolute;
-  left: 10%;
   display: flex;
   align-items: center;
+  margin-right: auto;
 }
 
 .Head1 img {
@@ -35,18 +39,33 @@ header {
   transform: translate(-35%, -60%);
 }
 
-main {
-  margin-top: 90px;
+.favButton {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 50px; /* Add margin to the right */
+}
+
+.currency-select {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Add margin to the left */
+  margin-right: auto;
 }
 
 .currency-select label {
   color: gold; /* Superman Gold */
   font-weight: bold;
+  margin-left: 40px; /* Adjust the margin as needed */
 }
 
-select,
-select option {
+.currency-select select,
+.currency-select select option {
   cursor: pointer;
+}
+
+main {
+  margin-top: 90px;
 }
 
 /* Search Bar */
@@ -311,6 +330,104 @@ p {
   cursor: pointer;
 }
 
+/* Styles for Superman theme dark */
+.favorites-popup {
+  background-color: #003087;
+  border: 2px solid #ff0000; /* Red */
+  padding: 20px;
+  position: absolute;
+  top: 100%; /* Position the popup below the favButton */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 500px; /* Adjust the max-width as needed */
+  font-family: 'Arial', sans-serif;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.favorites-popup h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #ff0000;
+  text-transform: uppercase;
+}
+
+.favorite-coin span {
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.favorite-coin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 100%;
+  font-weight: bold;
+}
+
+.favorite-coin .coin-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.favorite-coin .coin-details p {
+  margin: 5px 0;
+  color: white;
+}
+
+.remove-button {
+  background-color: #ff0000;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.remove-button:hover {
+  background-color: #cc0000;
+}
+
+.favorites-popup .closeFav {
+  background-color: #ff0000;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
+
+.favorites-popup .closeFav:hover {
+  background-color: #cc0000;
+}
+
+.favButton {
+  background-color: transparent;
+  border: none;
+  color: gold; /* Superman Gold */
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.favButton:hover {
+  color: #ffffff; /* White */
+}
+
 /* Styles for screens smaller than 600px */
 @media (max-width: 600px) {
   .Head1 {
@@ -404,6 +521,26 @@ p {
     padding: 6px 12px;
   }
 
+  .favorites-popup {
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+  .favorites-popup h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .favorite-coin span {
+    font-size: 14px;
+  }
+
+  .remove-button,
+  .favorites-popup .closeFav {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
   /* Add more styles as needed for smaller screens */
 }
 
@@ -421,6 +558,25 @@ p {
     flex-direction: column;
   }
 
+  .favorites-popup {
+    padding: 40px;
+    margin-top: 40px;
+  }
+
+  .favorites-popup h2 {
+    font-size: 42px;
+    margin-bottom: 30px;
+  }
+
+  .favorite-coin span {
+    font-size: 28px;
+  }
+
+  .remove-button,
+  .favorites-popup .closeFav {
+    padding: 16px 32px;
+    font-size: 28px;
+  }
   /* Add more styles as needed for this screen size range */
 }
 

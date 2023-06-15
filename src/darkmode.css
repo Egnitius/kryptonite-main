@@ -143,5 +143,72 @@ body.dark-mode {
   margin-right: auto; /* Add this property to push the button to the left side */
 }
 
+/* favorites pop up */
+/* Styles for Superman theme dark */
+.App.dark-mode .favorites-popup {
+  background-color: #222;
+  border-color: #d7df23;
+  padding: 20px;
+  position: absolute;
+  top: 100%; /* Position the popup below the favButton */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 500px; /* Adjust the max-width as needed */
+  font-family: 'Arial', sans-serif;
+  color: #d7df23;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
+.App.dark-mode .favorites-popup h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #d7df23;
+  text-transform: uppercase;
+}
+
+.App.dark-mode .favorite-coin span {
+  color: #d7df23;
+  font-size: 16px;
+}
+
+.App.dark-mode .favorite-coin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.App.dark-mode .remove-button {
+  background-color: #d7df23;
+  color: #000;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.App.dark-mode .remove-button:hover {
+  background-color: #cc0000;
+}
+
+.App.dark-mode .favorites-popup .closeFav {
+  background-color: #d7df23;
+  color: #000;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.App.dark-mode .favorites-popup .closeFav:hover {
+  background-color: #cc0000;
+}
 /* Add more dark mode styles as needed */

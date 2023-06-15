@@ -12,6 +12,8 @@ import { Line, Bar } from "react-chartjs-2";
 import "chart.js/auto";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
+import { faStar as solidStar } from "@fortawesome/free-solid-svg-icons";
+import { faStar as regularStar } from "@fortawesome/free-regular-svg-icons";
 
 library.add(faInfoCircle);
 
@@ -25,6 +27,9 @@ function App() {
   const [chartType, setChartType] = useState("line");
   const [title, setTitle] = useState("");
   const [darkMode, setDarkMode] = useState(false);
+  const [favorites, setFavorites] = useState([]);
+
+  const [showFavorites, setShowFavorites] = useState(false);
 
   const handleSearch = (event) => {
     const query = event.target.value.toLowerCase();
@@ -77,6 +82,17 @@ function App() {
     fetchData();
   }, [selectedCurrency]);
 
+  useEffect(() => {
+    // Get the favorites from storage
+    const storedFavorites = localStorage.getItem('favorites');
+  
+    // Check if there are stored favorites
+    if (storedFavorites) {
+      const parsedFavorites = JSON.parse(storedFavorites);
+      setFavorites(parsedFavorites);
+    }
+  }, []);  
+
   const fetchChartData = async (coin) => {
     try {
       const response = await axios.get(
@@ -107,6 +123,7 @@ function App() {
     }
   };
 
+  //toggle dark mode
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
@@ -120,6 +137,21 @@ function App() {
       document.querySelector(".App").classList.remove("dark-mode");
     }
   }, [darkMode]);
+
+  //toggle favorites
+  const toggleFavorite = (coinId) => {
+    // Toggle the favorite status
+    const isFavorite = favorites.includes(coinId);
+    const updatedFavorites = isFavorite
+      ? favorites.filter((id) => id !== coinId)
+      : [...favorites, coinId];
+  
+    // Update the favorites in storage
+    localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
+  
+    // Update the state
+    setFavorites(updatedFavorites);
+  };  
 
   const calculatePriceInSelectedCurrency = (coin) => {
     const price =
@@ -215,10 +247,10 @@ function App() {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 4000,
   };
 
   return (
@@ -246,6 +278,59 @@ function App() {
             <option value="ZAR">Rand</option>
           </select>
         </div>
+        <button className="favButton" onClick={() => setShowFavorites(true)}>
+          Favorites
+        </button>
+
+        {showFavorites && (
+          <div className="favorites-popup">
+            <h2>Favorites</h2>
+            {favorites.length === 0 ? (
+              <p>No favorites selected.</p>
+            ) : (
+              favorites.map((coinId) => {
+                const coin = cryptoData.find(
+                  (coin) => coin.CoinInfo.Id === coinId
+                );
+                return (
+                  <div className="favorite-coin" key={coin.CoinInfo.Id}>
+                    <span
+                      onClick={() => {
+                        setSelectedCoin(coin);
+                        fetchChartData(coin);
+                      }}
+                    >
+                      {coin.CoinInfo.FullName}
+                    </span>
+                    <div className="coin-details">
+                      <p>
+                        Price: {getCurrencySymbol(selectedCurrency)}
+                        {calculatePriceInSelectedCurrency(coin)}
+                      </p>
+
+                      <p>
+                        Market Cap: {getCurrencySymbol(selectedCurrency)}
+                        {calculateMarketCapInSelectedCurrency(coin)}
+                      </p>
+                    </div>
+                    <button
+                      onClick={() => toggleFavorite(coin.CoinInfo.Id)}
+                      className="remove-button"
+                    >
+                      Remove
+                    </button>
+                  </div>
+                );
+              })
+            )}
+            <button
+              className="closeFav"
+              onClick={() => setShowFavorites(false)}
+            >
+              Close
+            </button>
+          </div>
+        )}
       </header>
       <br></br>
       <main>
@@ -480,6 +565,7 @@ function App() {
             <thead>
               <tr>
                 <th className="place text-center">ID</th>
+                <th>Favorites</th>
                 <th className="thumb text-center" colSpan="2">
                   Coin
                 </th>
@@ -522,6 +608,23 @@ function App() {
               {filteredCryptoData.map((coin) => (
                 <tr key={coin.CoinInfo.Id}>
                   <td className="place text-center">{coin.CoinInfo.Id}</td>
+                  <td>
+                    <FontAwesomeIcon
+                      icon={
+                        favorites.includes(coin.CoinInfo.Id)
+                          ? solidStar
+                          : regularStar
+                      }
+                      className={
+                        favorites.includes(coin.CoinInfo.Id)
+                          ? "star-gold"
+                          : "star-normal"
+                      }
+                      onClick={() => {
+                        toggleFavorite(coin.CoinInfo.Id);
+                      }}
+                    />
+                  </td>
                   <td className="thumb text-center" colSpan="2">
                     <img
                       src={`https://cryptocompare.com${coin.CoinInfo.ImageUrl}`}
