@@ -487,7 +487,8 @@ p {
 
   table {
     width: 100%;
-    font-size: 10px;
+    font-size: 12px;
+    table-layout: fixed;
   }
 
   table img {
@@ -587,6 +588,11 @@ p {
     padding: 16px 32px;
     font-size: 28px;
   }
+
+  table {
+    font-size: 14px;
+    table-layout: fixed;
+  }
   /* Add more styles as needed for this screen size range */
 }
 
@@ -603,6 +609,10 @@ p {
     font-size: 42px;
   }
 
+  table {
+    font-size: 16px;
+    table-layout: fixed;
+  }
   /* Add more styles as needed for larger screens */
 }
 
@@ -655,6 +665,7 @@ p {
 
   table {
     font-size: 10px;
+    table-layout: fixed;
   }
 
   .chart-modal {
@@ -702,6 +713,11 @@ p {
     margin-top: -30px;
   }
 
+  table {
+    font-size: 10px;
+    table-layout: fixed;
+  }
+
   /* Rest of the landscape styles... */
 }
 
@@ -718,6 +734,11 @@ p {
   h1 {
     /* Landscape-specific styles for h1 */
     font-size: 36px;
+  }
+
+  table {
+    font-size: 12px;
+    table-layout: fixed;
   }
 
   /* Rest of the landscape styles... */
@@ -738,6 +759,11 @@ p {
     font-size: 48px;
   }
 
+  table {
+    font-size: 14px;
+    table-layout: fixed;
+  }
+
   /* Rest of the landscape styles... */
 }
 
@@ -754,6 +780,11 @@ p {
   .currency-select {
     /* Landscape-specific styles for currency-select */
     margin-top: -30px;
+  }
+
+  table {
+    font-size: 8px;
+    table-layout: fixed;
   }
 
   /* Rest of the landscape styles... */
