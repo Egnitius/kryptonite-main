@@ -430,16 +430,19 @@ p {
 
 /* Styles for screens smaller than 600px */
 @media (max-width: 600px) {
+  /* Add your portrait styles here */
+
+  /* Example styles */
   .Head1 {
     position: static;
-    margin-bottom: -20px; /* Add margin-bottom to create space between Head1 and currency-select */
+    margin-bottom: -20px;
   }
 
   .currency-select {
-    margin-top: -20px; /* Add margin-top to create space above currency-select */
+    margin-top: -20px;
   }
 
-  /* Rest of the styles... */
+  /* Rest of the portrait styles... */
 
   .Head1 img {
     width: 50px;
@@ -546,6 +549,9 @@ p {
 
 /* Styles for screens between 601px and 1024px */
 @media (min-width: 601px) and (max-width: 1024px) {
+  /* Add your portrait styles here */
+
+  /* Example styles */
   header {
     padding: 15px;
   }
@@ -582,6 +588,9 @@ p {
 
 /* Styles for screens larger than 1024px */
 @media (min-width: 1025px) {
+  /* Add your portrait styles here */
+
+  /* Example styles */
   header {
     padding: 40px;
   }
@@ -595,16 +604,19 @@ p {
 
 /* Styles for Samsung phones */
 @media (max-width: 600px) and (max-height: 1024px) and (-webkit-device-pixel-ratio: 3) {
+  /* Add your portrait styles here */
+
+  /* Example styles */
   .Head1 {
     position: static;
-    margin-bottom: -20px; /* Add margin-bottom to create space between Head1 and currency-select */
+    margin-bottom: -20px;
   }
 
   .currency-select {
-    margin-top: -20px; /* Add margin-top to create space above currency-select */
+    margin-top: -20px;
   }
 
-  /* Rest of the styles... */
+  /* Rest of the portrait styles... */
 
   .Head1 img {
     width: 50px;
@@ -669,4 +681,76 @@ p {
   }
 
   /* Add more styles as needed for Samsung phones */
+}
+
+/* Styles for landscape screens smaller than 600px */
+@media (max-width: 600px) and (orientation: landscape) {
+  /* Add your landscape styles here */
+
+  /* Example styles */
+  .Head1 {
+    /* Landscape-specific styles for Head1 */
+    margin-bottom: -30px;
+  }
+
+  .currency-select {
+    /* Landscape-specific styles for currency-select */
+    margin-top: -30px;
+  }
+
+  /* Rest of the landscape styles... */
+}
+
+/* Styles for landscape screens between 601px and 1024px */
+@media (min-width: 601px) and (max-width: 1024px) and (orientation: landscape) {
+  /* Add your landscape styles here */
+
+  /* Example styles */
+  header {
+    /* Landscape-specific styles for header */
+    padding: 20px;
+  }
+
+  h1 {
+    /* Landscape-specific styles for h1 */
+    font-size: 36px;
+  }
+
+  /* Rest of the landscape styles... */
+}
+
+/* Styles for landscape screens larger than 1024px */
+@media (min-width: 1025px) and (orientation: landscape) {
+  /* Add your landscape styles here */
+
+  /* Example styles */
+  header {
+    /* Landscape-specific styles for header */
+    padding: 50px;
+  }
+
+  h1 {
+    /* Landscape-specific styles for h1 */
+    font-size: 48px;
+  }
+
+  /* Rest of the landscape styles... */
+}
+
+/* Styles for landscape Samsung phones */
+@media (max-width: 600px) and (max-height: 1024px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
+  /* Add your landscape styles here */
+
+  /* Example styles */
+  .Head1 {
+    /* Landscape-specific styles for Head1 */
+    margin-bottom: -30px;
+  }
+
+  .currency-select {
+    /* Landscape-specific styles for currency-select */
+    margin-top: -30px;
+  }
+
+  /* Rest of the landscape styles... */
 }
