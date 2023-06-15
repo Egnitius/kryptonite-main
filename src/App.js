@@ -84,14 +84,14 @@ function App() {
 
   useEffect(() => {
     // Get the favorites from storage
-    const storedFavorites = localStorage.getItem('favorites');
-  
+    const storedFavorites = localStorage.getItem("favorites");
+
     // Check if there are stored favorites
     if (storedFavorites) {
       const parsedFavorites = JSON.parse(storedFavorites);
       setFavorites(parsedFavorites);
     }
-  }, []);  
+  }, []);
 
   const fetchChartData = async (coin) => {
     try {
@@ -145,13 +145,13 @@ function App() {
     const updatedFavorites = isFavorite
       ? favorites.filter((id) => id !== coinId)
       : [...favorites, coinId];
-  
+
     // Update the favorites in storage
-    localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
-  
+    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+
     // Update the state
     setFavorites(updatedFavorites);
-  };  
+  };
 
   const calculatePriceInSelectedCurrency = (coin) => {
     const price =
@@ -626,16 +626,18 @@ function App() {
                     />
                   </td>
                   <td className="thumb text-center" colSpan="2">
-                    <img
-                      src={`https://cryptocompare.com${coin.CoinInfo.ImageUrl}`}
-                      alt={coin.CoinInfo.FullName}
-                      className="coin-image"
-                      onClick={() => {
-                        setSelectedCoin(coin);
-                        fetchChartData(coin);
-                      }}
-                    /><br></br>
-                    {coin.CoinInfo.FullName}
+                    <div className="coin-wrapper">
+                      <img
+                        src={`https://cryptocompare.com${coin.CoinInfo.ImageUrl}`}
+                        alt={coin.CoinInfo.FullName}
+                        className="coin-image"
+                        onClick={() => {
+                          setSelectedCoin(coin);
+                          fetchChartData(coin);
+                        }}
+                      />
+                      <div className="coin-name">{coin.CoinInfo.FullName}</div>
+                    </div>
                   </td>
                   <td className="price text-center">
                     {getCurrencySymbol(selectedCurrency)}
