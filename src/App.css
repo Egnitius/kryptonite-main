@@ -736,6 +736,10 @@ p {
     padding: 20px;
   }
 
+  .Head1 img {
+    width: 50px;
+  }
+
   h1 {
     /* Landscape-specific styles for h1 */
     font-size: 36px;
