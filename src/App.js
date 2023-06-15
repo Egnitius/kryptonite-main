@@ -634,7 +634,7 @@ function App() {
                         setSelectedCoin(coin);
                         fetchChartData(coin);
                       }}
-                    />
+                    /><br></br>
                     {coin.CoinInfo.FullName}
                   </td>
                   <td className="price text-center">
