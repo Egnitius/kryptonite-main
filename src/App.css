@@ -489,6 +489,7 @@ p {
     width: 100%;
     font-size: 11px;
     table-layout: fixed;
+    word-wrap: break-word;
   }
 
   table img {
@@ -592,6 +593,7 @@ p {
   table {
     font-size: 12px;
     table-layout: fixed;
+    word-wrap: break-word;
   }
   /* Add more styles as needed for this screen size range */
 }
@@ -612,6 +614,7 @@ p {
   table {
     font-size: 14px;
     table-layout: fixed;
+    word-wrap: break-word;
   }
   /* Add more styles as needed for larger screens */
 }
@@ -666,6 +669,7 @@ p {
   table {
     font-size: 10px;
     table-layout: fixed;
+    word-wrap: break-word;
   }
 
   .chart-modal {
@@ -716,6 +720,7 @@ p {
   table {
     font-size: 10px;
     table-layout: fixed;
+    word-wrap: break-word;
   }
 
   /* Rest of the landscape styles... */
@@ -739,6 +744,7 @@ p {
   table {
     font-size: 12px;
     table-layout: fixed;
+    word-wrap: break-word;
   }
 
   /* Rest of the landscape styles... */
@@ -762,6 +768,7 @@ p {
   table {
     font-size: 14px;
     table-layout: fixed;
+    word-wrap: break-word;
   }
 
   /* Rest of the landscape styles... */
@@ -785,6 +792,7 @@ p {
   table {
     font-size: 8px;
     table-layout: fixed;
+    word-wrap: break-word;
   }
 
   /* Rest of the landscape styles... */
