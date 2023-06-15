@@ -490,6 +490,10 @@ p {
     font-size: 10px;
   }
 
+  table img {
+    width: 20px;
+  }
+
   .chart-modal {
     align-items: flex-start;
     padding: 20px;
