@@ -124,7 +124,7 @@ main {
 
 .coin-name {
   margin-top: 5px;
-  font-size: 12px;
+  font-size: 15px;
   text-align: center;
 }
 
@@ -508,8 +508,15 @@ p {
     word-wrap: break-word;
   }
 
-  table img {
+  .coin-image {
     width: 20px;
+    height: 20px;
+    /* Adjust other image styles as needed */
+  }
+
+  .coin-name {
+    font-size: 10px;
+    /* Adjust other text styles as needed */
   }
 
   .chart-modal {
@@ -547,24 +554,24 @@ p {
   }
 
   .favorites-popup {
-    padding: 10px;
-    margin-top: 10px;
+    padding: 1%;
+    margin-top: 1%;
   }
-
+  
   .favorites-popup h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
+    font-size: 1.8em;
+    margin-bottom: 1%;
   }
-
+  
   .favorite-coin span {
-    font-size: 14px;
+    font-size: 1.4em;
   }
-
+  
   .remove-button,
   .favorites-popup .closeFav {
-    padding: 6px 12px;
-    font-size: 12px;
-  }
+    padding: 1% 2%;
+    font-size: 0.8em;
+  }  
 
   /* Add more styles as needed for smaller screens */
 }
@@ -587,29 +594,40 @@ p {
   }
 
   .favorites-popup {
-    padding: 40px;
-    margin-top: 40px;
+    padding: 1%;
+    margin-top: 1%;
   }
 
   .favorites-popup h2 {
-    font-size: 42px;
-    margin-bottom: 30px;
+    font-size: 1.8em;
+    margin-bottom: 1%;
   }
 
   .favorite-coin span {
-    font-size: 28px;
+    font-size: 1.4em;
   }
 
   .remove-button,
   .favorites-popup .closeFav {
-    padding: 16px 32px;
-    font-size: 28px;
+    padding: 1% 2%;
+    font-size: 0.8em;
   }
 
   table {
     font-size: 12px;
     table-layout: fixed;
     word-wrap: break-word;
+  }
+
+  .coin-image {
+    width: 20px;
+    height: 20px;
+    /* Adjust other image styles as needed */
+  }
+
+  .coin-name {
+    font-size: 10px;
+    /* Adjust other text styles as needed */
   }
   /* Add more styles as needed for this screen size range */
 }
@@ -631,6 +649,17 @@ p {
     font-size: 14px;
     table-layout: fixed;
     word-wrap: break-word;
+  }
+
+  .coin-image {
+    width: 20px;
+    height: 20px;
+    /* Adjust other image styles as needed */
+  }
+
+  .coin-name {
+    font-size: 10px;
+    /* Adjust other text styles as needed */
   }
   /* Add more styles as needed for larger screens */
 }
@@ -686,6 +715,17 @@ p {
     font-size: 10px;
     table-layout: fixed;
     word-wrap: break-word;
+  }
+
+  .coin-image {
+    width: 20px;
+    height: 20px;
+    /* Adjust other image styles as needed */
+  }
+
+  .coin-name {
+    font-size: 10px;
+    /* Adjust other text styles as needed */
   }
 
   .chart-modal {
