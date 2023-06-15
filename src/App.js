@@ -344,9 +344,9 @@ function App() {
           <button> Search</button>
         </div>
         <div className="top-five">
-          <h2>Top 6 Cryptocurrencies</h2>
+          <h2>Top 10 Cryptocurrencies</h2>
           <Slider {...settings}>
-            {cryptoData.slice(0, 6).map((coin) => (
+            {cryptoData.slice(0, 10).map((coin) => (
               <div className="coin" key={coin.CoinInfo.Id}>
                 <img
                   src={`https://cryptocompare.com${coin.CoinInfo.ImageUrl}`}

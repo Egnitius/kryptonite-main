@@ -474,18 +474,56 @@ p {
     width: 100%;
   }
 
-  .coin {
+  /* .coin {
     max-width: 100%;
     margin: 10px auto;
     padding: 0px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-  }
+  } */
 
   .coin-details p,
   .coin-details h3 {
     font-size: 12px;
+  }
+
+  .top-five {
+    margin: 20px auto;
+    max-width: 400px;
+  }
+
+  .coin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+  }
+
+  .top-five .coin-image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .coin-details {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .slick-slider {
+    margin: 0 auto;
+    max-width: 300px;
+  }
+
+  .slick-slide {
+    outline: none;
   }
 
   .news-section {
@@ -629,6 +667,44 @@ p {
     font-size: 10px;
     /* Adjust other text styles as needed */
   }
+
+  .top-five {
+    margin: 20px auto;
+    max-width: 800px;
+  }
+
+  .coin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+  }
+
+  .coin-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .coin-details {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .slick-slider {
+    margin: 0 auto;
+    max-width: 800px;
+  }
+
+  .slick-slide {
+    outline: none;
+  }
   /* Add more styles as needed for this screen size range */
 }
 
@@ -646,19 +722,19 @@ p {
   }
 
   table {
-    font-size: 14px;
+    font-size: 16px;
     table-layout: fixed;
     word-wrap: break-word;
   }
 
   .coin-image {
-    width: 20px;
-    height: 20px;
+    width: 50px;
+    height: 50px;
     /* Adjust other image styles as needed */
   }
 
   .coin-name {
-    font-size: 10px;
+    font-size: 16px;
     /* Adjust other text styles as needed */
   }
   /* Add more styles as needed for larger screens */
